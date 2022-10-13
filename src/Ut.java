@@ -194,6 +194,27 @@ public class Ut {
 	// assert min <= res && res <= max : "tirage aleatoire hors des bornes";
 	return res;
     }
+	public static void  afficherMatriceEntiers(int [][] t){
+		for (int i = 0; i < t.length; i++){
+			for (int j = 0; i<t[i].length; i++){
+				Ut.afficher(t[i][j]+" ");
+			}
+			Ut.sautLigne();
+		}
+	}
+	public static void  afficherTabEntiers(int [] t) {
+		for (int i = 0; i < t.length; i++){
+			Ut.afficher(t[i]+" ");
+		}
+	}
+
+	public static int []  saisirTabEntiers(int taille){
+		int [] tableau = new int [taille];
+		for (int i = 0; i < tableau.length; i++){
+			tableau[i] = Ut.saisirEntier();
+		}
+		return tableau;
+	}
 
     public static void clearConsole () {
 		// Action : efface la console (le terminal)

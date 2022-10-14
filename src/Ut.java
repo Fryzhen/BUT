@@ -196,7 +196,7 @@ public class Ut {
     }
 	public static void  afficherMatriceEntiers(int [][] t){
 		for (int i = 0; i < t.length; i++){
-			for (int j = 0; i<t[i].length; i++){
+			for (int j = 0; j < t[i].length; j++){
 				Ut.afficher(t[i][j]+" ");
 			}
 			Ut.sautLigne();

@@ -61,7 +61,7 @@ public class TD4 {
     public static void main(String[] arg) {
         int [][] mat1 = {{1,2,3},{1,2,3},{1,2,3}};
         int [][] mat2 = {{1,2,0,4},{1,0,3,4},{1,0,3,0},{0,2,3,4}};
-        Ut.afficher(calcMatriceNull(mat2));
+        //Ut.afficher(calcMatriceNull(mat2));
 
     }
 }

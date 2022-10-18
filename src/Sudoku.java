@@ -4,21 +4,21 @@ public class Sudoku {
         int slen = sudoku.length;
         int ligne = 3;
         int colone = 3;
-        for (int i = 0; i < slen; i++){
+        for (int[] ints : sudoku) {
             Ut.sautLigne();
-            if (ligne == 3){
+            if (ligne == 3) {
                 Ut.afficher("—————————————————————————");
                 Ut.sautLigne();
                 ligne = 0;
             }
             ligne += 1;
-            for (int j = 0; j < slen; j++){
-                if (colone == 3){
+            for (int j = 0; j < slen; j++) {
+                if (colone == 3) {
                     Ut.afficher("| ");
                     colone = 0;
                 }
                 colone += 1;
-                Ut.afficher(sudoku[i][j]);
+                Ut.afficher(ints[j]);
                 Ut.afficher(" ");
 
             }
@@ -111,34 +111,14 @@ public class Sudoku {
 
     public static int [][] sudokuSwapLigneCarre(int [][] sudoku){
         int [][] newsudoku = {{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,8,0},{0,0,0,0,0,0,0,0,0}};
-        for (int i = 0; i < sudoku.length/3; i++){
-            newsudoku[3*i+0][0] = sudoku[3*i+0][0];
-            newsudoku[3*i+0][1] = sudoku[3*i+0][1];
-            newsudoku[3*i+0][2] = sudoku[3*i+0][2];
-            newsudoku[3*i+1][0] = sudoku[3*i+0][3];
-            newsudoku[3*i+1][1] = sudoku[3*i+0][4];
-            newsudoku[3*i+1][2] = sudoku[3*i+0][5];
-            newsudoku[3*i+2][0] = sudoku[3*i+0][6];
-            newsudoku[3*i+2][1] = sudoku[3*i+0][7];
-            newsudoku[3*i+2][2] = sudoku[3*i+0][8];
-            newsudoku[3*i+0][3] = sudoku[3*i+1][0];
-            newsudoku[3*i+0][4] = sudoku[3*i+1][1];
-            newsudoku[3*i+0][5] = sudoku[3*i+1][2];
-            newsudoku[3*i+1][3] = sudoku[3*i+1][3];
-            newsudoku[3*i+1][4] = sudoku[3*i+1][4];
-            newsudoku[3*i+1][5] = sudoku[3*i+1][5];
-            newsudoku[3*i+2][3] = sudoku[3*i+1][6];
-            newsudoku[3*i+2][4] = sudoku[3*i+1][7];
-            newsudoku[3*i+2][5] = sudoku[3*i+1][8];
-            newsudoku[3*i+0][6] = sudoku[3*i+2][0];
-            newsudoku[3*i+0][7] = sudoku[3*i+2][1];
-            newsudoku[3*i+0][8] = sudoku[3*i+2][2];
-            newsudoku[3*i+1][6] = sudoku[3*i+2][3];
-            newsudoku[3*i+1][7] = sudoku[3*i+2][4];
-            newsudoku[3*i+1][8] = sudoku[3*i+2][5];
-            newsudoku[3*i+2][6] = sudoku[3*i+2][6];
-            newsudoku[3*i+2][7] = sudoku[3*i+2][7];
-            newsudoku[3*i+2][8] = sudoku[3*i+2][8];
+        for (int i = 0; i < 3; i++){
+            for (int j = 0; j < 3; j++){
+                for (int k = 0; k < 3; k++){
+                    for (int l = 0; l < 3; l++) {
+                        newsudoku[3*i+k][3*j+l] = sudoku[3*i+j][3*k+l];
+                    }
+                }
+            }
         }
         return newsudoku;
     }
@@ -172,8 +152,8 @@ public class Sudoku {
         sudokuDisp(s);
         //sudokuSolv(s);
 
-        //sudokuDisp(sudokuCheck(s)
-        //sudokuDisp(sudokuSwapLigneCarre(s)
+        //sudokuDisp(sudokuCheck(s));
+        //sudokuDisp(sudokuSwapLigneCarre(sudokuSwapLigneCarre(s)));
         //sudokuDisp(sudokuSwapLigneColone(s));
 
 

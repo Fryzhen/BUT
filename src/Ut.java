@@ -66,14 +66,6 @@ public class Ut {
 	afficher(b); passerLigne();
     }
 
-    public static void afficher (int [][] mat) {
-	for (int i = 0 ; i < mat.length ; i++) {
-	    for (int j = 0 ; j < mat[i].length ; j++) {
-		System.out.print(mat[i][j] + "\t");
-	    }
-	    sautLigne();
-	}
-    }
     public static void afficherSL (int [][] mat) {
 	afficher(mat); passerLigne();
     }
@@ -194,7 +186,7 @@ public class Ut {
 	// assert min <= res && res <= max : "tirage aleatoire hors des bornes";
 	return res;
     }
-	public static void  afficherMatriceEntiers(int [][] t){
+	public static void  afficher(int [][] t){
 		for (int i = 0; i < t.length; i++){
 			for (int j = 0; j < t[i].length; j++){
 				Ut.afficher(t[i][j]+" ");
@@ -202,7 +194,7 @@ public class Ut {
 			Ut.sautLigne();
 		}
 	}
-	public static void  afficherTabEntiers(int [] t) {
+	public static void  afficher(int [] t) {
 		for (int i = 0; i < t.length; i++){
 			Ut.afficher(t[i]+" ");
 		}

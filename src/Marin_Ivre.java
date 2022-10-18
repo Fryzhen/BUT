@@ -81,7 +81,7 @@ public class Marin_Ivre {
 
     public  static void dispplanche(int [][] planche){
         for (int i = 0; i < planche.length; i++){
-            Ut.afficherTabEntiers(planche[i]);
+            Ut.afficher(planche[i]);
             Ut.sautLigne();
         }
     }

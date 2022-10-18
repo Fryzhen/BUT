@@ -109,6 +109,6 @@ public class TD3 {
 
 
     public static void main(String[] arg) {
-
+        Ut.afficher(frequenceChiffre(494854562));
     }
 }

@@ -1,11 +1,11 @@
-public class Sudoku {
+/*public class Sudoku {
 
     public static int[][][] sudokuCreaPos(int [][] s){
-        int zerocount = 0
+        int zerocount = 0;
         for (int i = 0; i < s.length; i++){
             for (int j = 0; j < s[i].length; j++){
                 if (s[i][j] == 0) {
-                    zerocount += 1
+                    zerocount += 1;
                 }
             }
         }
@@ -44,3 +44,4 @@ public class Sudoku {
         int[][] s = sudoku_d;
     }
 }
+*/

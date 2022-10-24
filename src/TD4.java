@@ -55,13 +55,40 @@ public class TD4 {
         Ut.sautLigne();
     }
 
+    public static void  spirale(int z){
+        int [][] mat = new int[z][z];
+        int x = 0;
+        int y = 0;
+        int direction = 0;
+        for (int a = 0; a < Math.pow(x,2); a++){
+            if (direction == 0 && x == z){
+                direction = 1;
+            } else if (direction == 1 && y == z) {
+                direction = 2;
+            } else if (direction == 2 && x == 0) {
+                direction = 3;
+            } else if (direction == 3 && y == 0) {
+                direction = 0;
+            }
+            if (direction == 0){
+                x += 1;
+            } else if (direction == 1) {
+                y += 1;
+            } else if (direction == 2) {
+                x -= 1;
+            } else if (direction == 3) {
+                y -= 1;
+            }
+
+            mat[x][y] = a;
+        }
+    }
+
+
 
 
 
     public static void main(String[] arg) {
-        int [][] mat1 = {{1,2,3},{1,2,3},{1,2,3}};
-        int [][] mat2 = {{1,2,0,4},{1,0,3,4},{1,0,3,0},{0,2,3,4}};
-        //Ut.afficher(calcMatriceNull(mat2));
-
+        spirale(4);
     }
 }

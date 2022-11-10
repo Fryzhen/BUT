@@ -10,7 +10,7 @@ public class TD1 {
             n = n - p;
         }
         Ut.afficher(i);
-        Ut.afficherSL("");
+        Ut.afficher("");
         Ut.afficher(n);
         }
 

@@ -8,18 +8,18 @@ public class TD2 {
         int d = Ut.saisirEntier();
 
         if (a == b && b == c && c == d) {
-            Ut.afficherSL("Carré");
+            Ut.afficher("Carré");
 
         } else {
             if ((a == b && b == c) || (a == c && c == d) || (b == c && c == d) || (a == b && b == d)) {
-                Ut.afficherSL("Brelan");
+                Ut.afficher("Brelan");
             } else {
 
                 if ((a == b && c == d) || (a == c && b == d) || (a == d && b == c)) {
-                    Ut.afficherSL("Double Paire");
+                    Ut.afficher("Double Paire");
                 } else {
                     if ((a == b) || (a == c) || (a == d) || (b == c) || (b == d) || (c == d)) {
-                        Ut.afficherSL("Paire");
+                        Ut.afficher("Paire");
                     }
                 }
             }
@@ -65,7 +65,7 @@ public class TD2 {
 
         } else {
             Ut.afficher((b - Math.sqrt(d)) / (2 * a));
-            Ut.afficherSL("");
+            Ut.afficher("");
             Ut.afficher((b + Math.sqrt(d)) / (2 * a));
         }
     }
@@ -79,14 +79,14 @@ public class TD2 {
         for (int i = 0; i <= 100; i++) {
             int res = ((a * i * i * i) + (b * i * i) + (c * i) + d);
             if (res == 0) {
-                Ut.afficherSL(res);
-                Ut.afficherSL("");
+                Ut.afficher(res);
+                Ut.afficher("");
             }
             double n = i * -1;
             double nres = ((a * n * n * n) + (b * n * n) + (c * n) + d);
             if (nres == 0) {
-                Ut.afficherSL(nres);
-                Ut.afficherSL("");
+                Ut.afficher(nres);
+                Ut.afficher("");
             }
         }
     }

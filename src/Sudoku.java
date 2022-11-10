@@ -1,5 +1,5 @@
-/*public class Sudoku {
-
+public class Sudoku {
+    /*
     public static int[][][] sudokuCreaPos(int [][] s){
         int zerocount = 0;
         for (int i = 0; i < s.length; i++){
@@ -25,7 +25,8 @@
 
         return alls;
     }
-
+    */
+    /*
     public static void main(String[] arg) {
         // {{,,,,,,,,},{,,,,,,,,},{,,,,,,,,},{,,,,,,,,},{,,,,,,,,},{,,,,,,,,},{,,,,,,,,},{,,,,,,,,},{,,,,,,,,}}
 
@@ -43,5 +44,5 @@
 
         int[][] s = sudoku_d;
     }
+    */
 }
-*/

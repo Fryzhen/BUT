@@ -18,9 +18,6 @@ class MainFraction { // Classe de test de Fraction et contenant la fonction prin
 
 	System.out.print ("f1 = "); System.out.println (f1.toString());
 
-	System.out.println ("f2 = " + f2.fractionReduite());
-	System.out.println ("f3 = " + f3.toString());
-	System.out.println ("f4 = " + f4); // f4 n'etant pas de type String, f4.toString() est invoquee automatiquement : le resultat est concatene a la chaine precedente ("f4 = ")
 
 	/* A COMPLETER A PARTIR D'ICI !! */
 

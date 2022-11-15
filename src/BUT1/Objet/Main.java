@@ -5,9 +5,9 @@ public class Main {
 
     public static void main(String args[]) {
 
-        Voiture v1 = new Voiture("T", 0);
+        Voiture v1 = new Voiture("T", 8);
 
 
-        System.out.println(v1.toString2());
+        System.out.println(v1.toString());
     }
 }

@@ -40,7 +40,7 @@ public class Bordel {
             System.out.println(' ');
         }
     }
-
+//j'ai une grosse bite
     //▬▭
     public static void main(String args[]) {
         //System.out.println(Ut.hexaToBin("CEED6666CC0D000B03730083000C000D0008111F8889000EDCCC6EE6DDDDD999BBBB67636E0EECCCDDDC999FBBB9333E"));

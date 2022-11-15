@@ -13,15 +13,19 @@ public class Voiture {
 
     }
     public String toString() {
-        return "Nom : " + this.nom + " Vitesse : " + this.vitesse + " |Position : " + this.position + " ";
+        return "Nom : " + this.nom + " \nVitesse : " + this.vitesse + " \nPosition : " + this.position + " ";
     }
     public String toString2() {
         /* résultat : retourne une chaîne de caractères formée d’une suite d’espaces
          * suivie de la première lettre du nom de this, suivie d’un retour
          * à la ligne, le nombre d’espaces étant égal à la position de this.
          */
-        String ligne = " " * this.position + this.nom[0];
-        return ligne;
+        String chaine = "";
+            for(int i =0; i < this.position; i++){
+                chaine += " ";
+            }
+            chaine += this.nom.charAt(0);
+        return chaine;
     }
     public String leNom() {
         return this.nom;

@@ -1,3 +1,5 @@
+package BUT1.Matrices;
+import BUT1.Ut;
 public class Sudoku_crash {
 
     public static void sudokuDisp(int[][] sudoku) {

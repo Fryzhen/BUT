@@ -1,7 +1,9 @@
-
+package BUT1.Objet;
+import BUT1.Ut;
 import java.lang.*;
 
 public class Fraction {
+
 
     private int numerateur;
 

@@ -1,4 +1,4 @@
-import java.lang.reflect.Array;
+package BUT1;
 
 public class Bordel {
     public static void gameboydisp() {

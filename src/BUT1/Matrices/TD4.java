@@ -1,3 +1,5 @@
+package BUT1.Matrices;
+import BUT1.Ut;
 public class TD4 {
     public static int[][] addMatrice(int[][] mat1, int[][] mat2) {
         int [][] matsum = new int[mat1.length][mat1[0].length];

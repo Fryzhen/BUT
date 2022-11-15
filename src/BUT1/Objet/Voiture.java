@@ -1,9 +1,7 @@
 package BUT1.Objet;
-import BUT1.Ut;
 
 
-
-public class Course {
+public class Voiture {
     private String nom;
     private int position;
     private int vitesse;
@@ -22,6 +20,8 @@ public class Course {
          * suivie de la première lettre du nom de this, suivie d’un retour
          * à la ligne, le nombre d’espaces étant égal à la position de this.
          */
+        String ligne = " " * this.position + this.nom[0];
+        return ligne;
     }
     public String leNom() {
         return this.nom;
@@ -33,11 +33,10 @@ public class Course {
         return this.position >= limite;
     }
     public void avance() {
-        /* pré-requis : (à compléter)
-         * action : fait avancer this d’une distance égale à sa vitesse */
+        this.position += this.position+this.vitesse;
     }
     public void auDepart() {
-        /* action : place this au départ de la course (à l’origine) */
+        this.position = 0;
     }
 
 

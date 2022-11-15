@@ -42,15 +42,4 @@ public class Voiture {
     public void auDepart() {
         this.position = 0;
     }
-
-
-
-
-
-
-
-
-
-
-
 }

@@ -37,7 +37,7 @@ public class Voiture {
         return this.position >= limite;
     }
     public void avance() {
-        this.position += this.position+this.vitesse;
+        this.position += this.vitesse;
     }
     public void auDepart() {
         this.position = 0;

@@ -1,5 +1,7 @@
 package BUT1.Objet;
 
+import BUT1.Ut;
+
 public class Course {
     private Voiture v1;
     private Voiture v2;
@@ -29,9 +31,20 @@ public class Course {
          */
         v1.auDepart();
         v2.auDepart();
-
+        while (!v1.depasse(longeur) && !v2.depasse(longeur)){
+            int rnd = Ut.randomMinMax(1,1000);
+            if (rnd <= 500){
+                v1.avance();
+            }else {
+                v2.avance();
+            }
+            Ut.pause(200);
+            Ut.clearConsole();
+            System.out.println(toString());
+        }
+        if (v1.depasse(longeur)){return v1;}
+        if (v2.depasse(longeur)){return v2;}
 
         return v1;
-
     }
 }

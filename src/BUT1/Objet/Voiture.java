@@ -31,7 +31,7 @@ public class Voiture {
         return this.nom;
     }
     public void faitDemiTour(){
-        this.vitesse *= -1
+        this.vitesse *= -1;
     }
     /* action : fait faire un demi-tour à this */
     public boolean depasse(int limite) {

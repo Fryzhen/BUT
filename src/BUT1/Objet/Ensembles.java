@@ -10,7 +10,7 @@ public class Ensembles {
 
     public Ensembles(int max) {
         this.ensTab = new int[max];
-        this.cardinal = this.ensTab.length;
+        this.cardinal = 0;
     }
 
     public Ensembles(int max, int[] tab) {
@@ -29,19 +29,30 @@ public class Ensembles {
         }
     }
 
-    public String toString() {
-        String ligne = "";
-        for (int i = 0; i < this.cardinal; i++) {
-            ligne += this.ensTab[i] + " ";
+    /*
+    public Ensembles(int max, String tab){
+        this.ensTab = new int[max];
+        this.cardinal = this.ensTab.length;
+        for (int i = 0; i < cardinal; i++){
+            this.ensTab[i] = Integer.parseInt(toString(tab.charAt(i)));
         }
-        return ligne;
+    }
+     */
+
+    public String toString() {
+        String ligne = "{";
+        ligne +=  this.ensTab[0];
+        for (int i = 1; i < this.ensTab.length; i++) {
+            ligne += " " + this.ensTab[i] ;
+        }
+        return ligne + "}";
     }
 
     public int getCardinal() {
         return this.cardinal;
     }
 
-    public int contientPratique(int num) {
+    private int contientPratique(int num) {
         for (int i = 0; i < cardinal; i++){
             if (ensTab[i] == num){return i;}
         }
@@ -55,16 +66,34 @@ public class Ensembles {
         return false;
     }
 
-    /*
-    public Ensembles(int max, String tab){
-        this.ensTab = new int[max];
-        this.cardinal = this.ensTab.length;
-        for (int i = 0; i < cardinal; i++){
-            this.ensTab[i] = Integer.parseInt(toString(tab.charAt(i)));
+    private void ajoutPratique(int e){
+        if (!contient(e) && cardinal != ensTab.length){
+            ensTab[cardinal] = e;
+            cardinal += 1;
         }
+
+
+
+
     }
 
-     */
+    private int retraitPratique (int i){
+        int[] t = new int[1];
+        if (0 < i && i < cardinal && contient(i)){
+            int k = ensTab[i];
+            ensTab[i] = t[0];
+            return k;
+        }
+        return 0;
+    }
+
+    public boolean estVide(){
+        return this.contient(0);
+    }
+
+    public boolean deborde(){
+        return cardinal >= ensTab.length;
+    }
 
 }
 

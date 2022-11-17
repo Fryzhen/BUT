@@ -4,9 +4,8 @@ public class Main {
 
 
     public static void main(String[] args) {
-
-        Ensembles e1 = new Ensembles(3, "1 2 3");
-
-
+        int[] ptitab = {1, 2, 3};
+        Ensembles e1 = new Ensembles(3,ptitab);
+        System.out.println(e1.contientPratique(4));
     }
 }

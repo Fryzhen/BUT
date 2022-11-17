@@ -7,6 +7,8 @@ public class Course {
     private Voiture v2;
     private int longeur;
 
+    private int nombre;
+
 
     public Course(Voiture uneVoit1, Voiture uneVoit2, int longueur) {
         this.v1 = uneVoit1;
@@ -31,20 +33,27 @@ public class Course {
          */
         v1.auDepart();
         v2.auDepart();
-        while (!v1.depasse(longeur) && !v2.depasse(longeur)){
-            int rnd = Ut.randomMinMax(1,1000);
-            if (rnd <= 500){
+        while (!v1.depasse(longeur) && !v2.depasse(longeur)) {
+            int rnd = Ut.randomMinMax(1, 1000);
+            if (rnd <= 500) {
                 v1.avance();
-            }else {
+            } else {
                 v2.avance();
             }
             Ut.pause(200);
             Ut.clearConsole();
             System.out.println(toString());
         }
-        if (v1.depasse(longeur)){return v1;}
-        if (v2.depasse(longeur)){return v2;}
+        if (v1.depasse(longeur)) {
+            System.out.println(v1.leNom());
+            return v1;
+        } else if (v2.depasse(longeur)) {
+            System.out.println(v2.leNom());
+            return v2;
+        } else {
 
-        return v1;
+        }
+    return v1;
     }
 }
+

@@ -30,6 +30,10 @@ public class Voiture {
     public String leNom() {
         return this.nom;
     }
+    public void faitDemiTour(){
+        this.vitesse *= -1
+    }
+    /* action : fait faire un demi-tour à this */
     public boolean depasse(int limite) {
         /* résultat : retourne vrai si et seulement si la position de this est
          * supérieure ou égale à limite

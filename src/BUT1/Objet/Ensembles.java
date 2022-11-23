@@ -99,11 +99,21 @@ public class Ensembles {
         return cardinal >= ensTab.length;
     }
 
+    private void deplace(){
+        while (contient(0)){
+            ensTab[contientPratique(0)] = ensTab[cardinal-1];
+            ensTab[cardinal-1] = 0;
+            cardinal -= 1;
+        }
+    }
+
+
     public boolean retraitElt(int num){
         int i = 0;
         while (contient(num)){
             this.ensTab[contientPratique(num)] = 0;
             i += 1;
+            deplace();
         }
         return i>0;
     }

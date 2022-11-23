@@ -99,5 +99,14 @@ public class Ensembles {
         return cardinal >= ensTab.length;
     }
 
+    public boolean retraitElt(int num){
+        int i = 0;
+        while (contient(num)){
+            this.ensTab[contientPratique(num)] = 0;
+            i += 1;
+        }
+        return i>0;
+    }
+
 }
 

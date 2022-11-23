@@ -110,7 +110,6 @@ public class Ensembles {
         }
     }
 
-
     public boolean retraitElt(int num) {
         int i = 0;
         while (contient(num)) {
@@ -131,7 +130,16 @@ public class Ensembles {
             cardinal++;
             return 1;
         }
+    }
 
+    public boolean estInclus(Ensembles ens) {
+        int k = 0;
+        for (int j = 0; j < ens.cardinal; j++) {
+            if (contient(ens.ensTab[j])) {
+                k += 1;
+            }
+        }
+        return k == (ens.cardinal);
     }
 
 }

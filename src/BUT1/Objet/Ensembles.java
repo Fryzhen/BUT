@@ -88,7 +88,11 @@ public class Ensembles {
     }
 
     public boolean estVide(){
-        return this.contient(0);
+        for (int i = 0; i < cardinal; i++){
+            if (ensTab[i] != 0){
+                return false;}
+        }
+        return true;
     }
 
     public boolean deborde(){

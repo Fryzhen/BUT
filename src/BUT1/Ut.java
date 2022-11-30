@@ -177,6 +177,32 @@ public class Ut {
         return tab;
     }
 
+    public static float[] saisirTabFloat(int taille) {
+        float[] tableau = new float[taille];
+        for (int i = 0; i < tableau.length; i++) {
+            tableau[i] = Ut.saisirFlottant();
+        }
+        return tableau;
+    }
+
+    public static float[][] saisirMatFloat(int largeur, int longeure) {
+        float[][] tableau = new float[largeur][longeure];
+        for (int i = 0; i < tableau.length; i++) {
+            for (int j = 0; j < tableau[0].length; j++) {
+                tableau[i][j] = Ut.saisirFlottant();
+            }
+        }
+        return tableau;
+    }
+
+    public static int[] saisirTabEntiers(int taille) {
+        int[] tableau = new int[taille];
+        for (int i = 0; i < tableau.length; i++) {
+            tableau[i] = Ut.saisirEntier();
+        }
+        return tableau;
+    }
+
     // _________________/Autres\_________________________
     public static int alphaToIndex(char c) {
         // Prerequis : c est un caractere entre 'a' et 'z'
@@ -191,13 +217,6 @@ public class Ut {
         return (char) (i + 97);
     }
 
-    public static int[] saisirTabEntiers(int taille) {
-        int[] tableau = new int[taille];
-        for (int i = 0; i < tableau.length; i++) {
-            tableau[i] = Ut.saisirEntier();
-        }
-        return tableau;
-    }
 
     public static void clearConsole() {
         // Action : efface la console (le terminal)
@@ -403,8 +422,6 @@ public class Ut {
         }
         return bin;
     }
-
-
 
 
 } // end class

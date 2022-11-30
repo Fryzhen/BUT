@@ -150,5 +150,14 @@ public class Ensembles {
         return true;
     }
 
+    public boolean estDisjoint(Ensembles ens) {
+        for (int j = 0; j < ensTab.length ; j++) {
+            if ((contient(ens.ensTab[j]))) {
+                return false;
+            }
+        }
+        return true;
+    }
+    // FIN PROGRAME
 }
 

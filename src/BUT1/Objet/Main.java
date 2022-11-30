@@ -13,7 +13,7 @@ public class Main {
         Ensembles e2 = new Ensembles(5,feur);
         //System.out.println(e2.deborde());
         //Ut.afficher(e1.toString());
-        Ut.afficher(e1.estInclus(e2));
+        Ut.afficher(e1.estEgal(e2));
         //Ut.afficher(e1.toString());
 
 

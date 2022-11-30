@@ -143,11 +143,11 @@ public class Ensembles {
     }
     public boolean estEgal(Ensembles ens) {
         for (int j = 0; j < ensTab.length ; j++) {
-            if (contient(ens.ensTab[j])) {
-
+            if (!(contient(ens.ensTab[j]))) {
+                return false;
             }
         }
-        return false;
+        return true;
     }
 
 }

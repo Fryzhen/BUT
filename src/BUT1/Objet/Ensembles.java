@@ -141,6 +141,14 @@ public class Ensembles {
         }
         return k == (ens.cardinal);
     }
+    public boolean estEgal(Ensembles ens) {
+        for (int j = 0; j < ensTab.length ; j++) {
+            if (contient(ens.ensTab[j])) {
+
+            }
+        }
+        return false;
+    }
 
 }
 

@@ -45,7 +45,22 @@ public class Ut {
         }
     }
 
+    public static void afficher(float[] t) {
+        for (int i = 0; i < t.length; i++) {
+            Ut.afficher(t[i] + " ");
+        }
+    }
+
     public static void afficher(int[][] t) {
+        for (int i = 0; i < t.length; i++) {
+            for (int j = 0; j < t[i].length; j++) {
+                Ut.afficher(t[i][j] + " ");
+            }
+            Ut.sautLigne();
+        }
+    }
+
+    public static void afficher(float[][] t) {
         for (int i = 0; i < t.length; i++) {
             for (int j = 0; j < t[i].length; j++) {
                 Ut.afficher(t[i][j] + " ");

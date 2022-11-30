@@ -45,11 +45,15 @@ public class Bordel {
 
     public static void matrice(float[][] equ) {
         Ut.afficher(equ);
-        for (int i = 1; i < equ.length; i++) {
-            for (int j = 0; j < equ[0].length - 1; j++) {
-                float div = equ[i][j] / equ[i - 1][j];
-                System.out.println(div);
+        System.out.println();
+        for (int col = 0; col < equ.length; col++) {
+            for (int lin1 = 0; lin1 < equ[0].length - 1; lin1++) {
+                for (int lin2 = lin1 + 1; lin2 < equ[0].length - 1; lin2++) {
+                    float div = equ[lin1][col] / equ[lin2][col];
+                    System.out.println(div);
 
+                }
+                System.out.println();
             }
         }
 

@@ -16,6 +16,5 @@ public class Main {
         Ut.afficher(e1.estDisjoint(e2));
         //Ut.afficher(e1.toString());
 
-
     }
 }

@@ -141,8 +141,9 @@ public class Ensembles {
         }
         return k == (ens.cardinal);
     }
+
     public boolean estEgal(Ensembles ens) {
-        for (int j = 0; j < ensTab.length ; j++) {
+        for (int j = 0; j < ensTab.length; j++) {
             if (!(contient(ens.ensTab[j]))) {
                 return false;
             }
@@ -151,13 +152,37 @@ public class Ensembles {
     }
 
     public boolean estDisjoint(Ensembles ens) {
-        for (int j = 0; j < ensTab.length ; j++) {
+        for (int j = 0; j < ensTab.length; j++) {
             if ((contient(ens.ensTab[j]))) {
                 return false;
             }
         }
         return true;
     }
+
+    public Ensembles intersection(Ensembles ens) {
+        Ensembles e3 = new Ensembles(this.cardinal + ens.cardinal);
+        for (int i = 0; i < this.cardinal; i++) {
+            if (contient(ens.ensTab[i])) {
+                e3.ajoutPratique(ens.ensTab[i]);
+            }
+        }
+        return e3;
+    }
+
+    public Ensembles reunion(Ensembles ens) {
+        Ensembles e3 = new Ensembles(this.cardinal + ens.cardinal);
+        for (int i = 0; i < this.cardinal; i++) {
+            e3.ajoutPratique(this.ensTab[i]);
+        }
+        for (int i = 0; i < ens.cardinal; i++) {
+            if (!(e3.contient(ens.ensTab[i]))) {
+                e3.ajoutPratique(ens.ensTab[i]);
+            }
+        }
+        return e3;
+    }
+
     // FIN PROGRAME
 }
 

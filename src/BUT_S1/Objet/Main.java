@@ -1,7 +1,5 @@
-package BUT1.Objet;
-import BUT1.Ut;
-
-import java.beans.VetoableChangeListenerProxy;
+package BUT_S1.Objet;
+import BUT_S1.Ut;
 
 public class Main {
 

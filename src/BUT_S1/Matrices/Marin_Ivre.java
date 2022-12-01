@@ -1,9 +1,9 @@
-package BUT1.Matrices;
-import BUT1.Ut;
+package BUT_S1.Matrices;
+import BUT_S1.Ut;
 public class Marin_Ivre {
 
     public static void arivobato (){
-        int planche[][]= creeplanche();
+        int[][] planche = creeplanche();
         int poslong = planche.length-1;
         int poslarg = (planche[0].length + 1)/2;
 

@@ -1,5 +1,5 @@
-package BUT1.Objet;
-import BUT1.Ut;
+package BUT_S1.Objet;
+import BUT_S1.Ut;
 public class Date {
 
     private int jour;

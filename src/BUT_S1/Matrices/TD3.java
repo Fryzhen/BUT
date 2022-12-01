@@ -1,5 +1,5 @@
-package BUT1.Matrices;
-import BUT1.Ut;
+package BUT_S1.Matrices;
+import BUT_S1.Ut;
 public class TD3 {
 
     public static void  afficherTabEntiers(int [] t) {

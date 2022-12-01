@@ -1,6 +1,6 @@
-package BUT1.Objet;
+package BUT_S1.Objet;
 
-import BUT1.Ut;
+import BUT_S1.Ut;
 
 public class Ensembles {
 
@@ -161,28 +161,60 @@ public class Ensembles {
     }
 
     public Ensembles intersection(Ensembles ens) {
-        Ensembles e3 = new Ensembles(this.cardinal + ens.cardinal);
+        Ensembles e = new Ensembles(this.cardinal + ens.cardinal);
         for (int i = 0; i < this.cardinal; i++) {
             if (contient(ens.ensTab[i])) {
-                e3.ajoutPratique(ens.ensTab[i]);
+                e.ajoutPratique(ens.ensTab[i]);
             }
         }
-        return e3;
+        return e;
     }
 
     public Ensembles reunion(Ensembles ens) {
-        Ensembles e3 = new Ensembles(this.cardinal + ens.cardinal);
+        Ensembles e = new Ensembles(this.cardinal + ens.cardinal);
         for (int i = 0; i < this.cardinal; i++) {
-            e3.ajoutPratique(this.ensTab[i]);
+            e.ajoutPratique(this.ensTab[i]);
         }
         for (int i = 0; i < ens.cardinal; i++) {
-            if (!(e3.contient(ens.ensTab[i]))) {
-                e3.ajoutPratique(ens.ensTab[i]);
+            if (!(e.contient(ens.ensTab[i]))) {
+                e.ajoutPratique(ens.ensTab[i]);
             }
         }
-        return e3;
+        return e;
+    }
+
+    public Ensembles difference(Ensembles ens) {
+        Ensembles e = new Ensembles(this.cardinal);
+        for (int i = 0; i < this.cardinal; i++) {
+            if (contient(ens.ensTab[i])) {
+                e.retraitPratique(i);
+            }
+        }
+        return e;
+    }
+
+    public int retraitEltAleatoirement() {
+        // Pré-requis : ensemble this est non vide
+        // Résultat/action : enlève un élément de this (aléatoirement) et le renvoie
+        int i = Ut.randomMinMax(0, this.cardinal - 1);
+        int select = retraitPratique(i);
+        return select;
+    }
+
+    public int selectionEltAleatoirement() {
+        // Pré-requis : ensemble this est non vide
+        // Résultat : un élément quelconque de this choisi aléatoirement
+        int i = Ut.randomMinMax(0, this.cardinal - 1);
+        return this.ensTab[i];
+    }
+
+    public int selectionElt() {
+        // Pré-requis : ensemble this est non vide
+        // Résultat : un élément quelconque de this
+        return this.ensTab[this.cardinal - 1];
     }
 
     // FIN PROGRAME
+
 }
 

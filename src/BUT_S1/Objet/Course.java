@@ -1,6 +1,6 @@
-package BUT1.Objet;
+package BUT_S1.Objet;
 
-import BUT1.Ut;
+import BUT_S1.Ut;
 
 public class Course {
     private Voiture v1;
@@ -47,13 +47,12 @@ public class Course {
         if (v1.depasse(longeur)) {
             System.out.println(v1.leNom());
             return v1;
-        } else if (v2.depasse(longeur)) {
+        } else {
             System.out.println(v2.leNom());
             return v2;
-        } else {
+
 
         }
-    return v1;
     }
 }
 

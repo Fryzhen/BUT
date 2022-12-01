@@ -1,5 +1,5 @@
-package BUT1.Matrices;
-import BUT1.Ut;
+package BUT_S1.Matrices;
+
 public class Sudoku {
     /*
     public static int[][][] sudokuCreaPos(int [][] s){

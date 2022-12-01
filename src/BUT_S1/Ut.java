@@ -1,4 +1,4 @@
-package BUT1;
+package BUT_S1;
 // dmaj : fin octobre 2020
 
 import java.util.*;

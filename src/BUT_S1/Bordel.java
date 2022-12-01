@@ -1,6 +1,4 @@
-package BUT1;
-
-import BUT1.Ut;
+package BUT_S1;
 
 public class Bordel {
     public static void gameboydisp() {
@@ -48,23 +46,25 @@ public class Bordel {
     public static void matrice(float[][] equ) {
         Ut.afficher(equ);
         System.out.println();
-        for (int col = 1; col < equ[0].length; col++) {
-            for (int lin = 1; lin < equ.length; lin++) {
-                equ[lin][col] = equ[lin][col] - ((equ[lin - 1][col - 1] / equ[lin][col - 1]) * equ[lin - 1][col]);
-                Ut.afficher(equ);
-
+        for (int lin = 1; lin < equ.length; lin++) {
+            float div = equ[lin][0]/equ[lin-1][0];
+            equ[lin][0] = 0;
+            for (int col = lin; col < equ[0].length; col++) {
+                //equ[lin][col] = equ[lin][col] - ((equ[lin - 1][col - 1] / equ[lin][col - 1]) * equ[lin - 1][col]);
+                Ut.afficher(equ[lin][col]);
+                equ[lin][col] = equ[lin][col] - (div * equ[lin][col-1]);
 
                 System.out.println();
             }
         }
-
+        Ut.afficher(equ);
 
     }
 
     public static void main(String args[]) {
         float[][] mat = {{1, 3, 4, 5}, {2, 1, 8, 9}, {4, 3, 2, 2}};
-        float[][] newmat = Ut.saisirMatFloat(4,5);
-        matrice(newmat);
+        //float[][] newmat = Ut.saisirMatFloat(4,5);
+        matrice(mat);
 
     }
 }

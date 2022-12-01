@@ -1,4 +1,4 @@
-package BUT1.Objet;
+package BUT_S1.Objet;
 
 
 public class Voiture {

@@ -102,17 +102,17 @@ public class TD2 {
     }
 
     public static void ex10() {
-        //  Variables : année
+        //  Variables : annee
         //  Strategie : Triple if backflip 360 noscope
         //
-        int année = Ut.saisirEntier();
-        if (0 == (année % 4)) {
-            if (0 == (année % 100)) {
-                année = année / 100;
-                if (0 == (année % 4)) {
-                    Ut.afficher("année bisextille");
+        int annee = Ut.saisirEntier();
+        if (0 == (annee % 4)) {
+            if (0 == (annee % 100)) {
+                annee = annee / 100;
+                if (0 == (annee % 4)) {
+                    Ut.afficher("annee bisextille");
                 } else {
-                    Ut.afficher("année non bisextille");
+                    Ut.afficher("annee non bisextille");
                 }
             }
         }

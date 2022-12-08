@@ -2,18 +2,18 @@ package BUT_S1.Objet;
 
 import BUT_S1.Ut;
 
-public class Ensembles {
+public class EE {
 
     private int[] ensTab;
 
     private int cardinal;
 
-    public Ensembles(int max) {
+    public EE(int max) {
         this.ensTab = new int[max];
         this.cardinal = 0;
     }
 
-    public Ensembles(int max, int[] tab) {
+    public EE(int max, int[] tab) {
         this.ensTab = new int[max];
         this.cardinal = tab.length;
         for (int i = 0; i < cardinal; i++) {
@@ -21,7 +21,7 @@ public class Ensembles {
         }
     }
 
-    public Ensembles(int[] tab) {
+    public EE(int[] tab) {
         this.ensTab = new int[tab.length];
         this.cardinal = tab.length;
         for (int i = 0; i < cardinal; i++) {
@@ -132,7 +132,7 @@ public class Ensembles {
         }
     }
 
-    public boolean estInclus(Ensembles ens) {
+    public boolean estInclus(EE ens) {
         int k = 0;
         for (int j = 0; j < ens.cardinal; j++) {
             if (contient(ens.ensTab[j])) {
@@ -142,7 +142,7 @@ public class Ensembles {
         return k == (ens.cardinal);
     }
 
-    public boolean estEgal(Ensembles ens) {
+    public boolean estEgal(EE ens) {
         for (int j = 0; j < ensTab.length; j++) {
             if (!(contient(ens.ensTab[j]))) {
                 return false;
@@ -151,7 +151,7 @@ public class Ensembles {
         return true;
     }
 
-    public boolean estDisjoint(Ensembles ens) {
+    public boolean estDisjoint(EE ens) {
         for (int j = 0; j < ensTab.length; j++) {
             if ((contient(ens.ensTab[j]))) {
                 return false;
@@ -160,8 +160,8 @@ public class Ensembles {
         return true;
     }
 
-    public Ensembles intersection(Ensembles ens) {
-        Ensembles e = new Ensembles(this.cardinal + ens.cardinal);
+    public EE intersection(EE ens) {
+        EE e = new EE(this.cardinal + ens.cardinal);
         for (int i = 0; i < this.cardinal; i++) {
             if (contient(ens.ensTab[i])) {
                 e.ajoutPratique(ens.ensTab[i]);
@@ -170,8 +170,8 @@ public class Ensembles {
         return e;
     }
 
-    public Ensembles reunion(Ensembles ens) {
-        Ensembles e = new Ensembles(this.cardinal + ens.cardinal);
+    public EE reunion(EE ens) {
+        EE e = new EE(this.cardinal + ens.cardinal);
         for (int i = 0; i < this.cardinal; i++) {
             e.ajoutPratique(this.ensTab[i]);
         }
@@ -183,8 +183,8 @@ public class Ensembles {
         return e;
     }
 
-    public Ensembles difference(Ensembles ens) {
-        Ensembles e = new Ensembles(this.cardinal);
+    public EE difference(EE ens) {
+        EE e = new EE(this.cardinal);
         for (int i = 0; i < this.cardinal; i++) {
             if (contient(ens.ensTab[i])) {
                 e.retraitPratique(i);

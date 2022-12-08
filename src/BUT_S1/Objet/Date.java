@@ -4,25 +4,25 @@ public class Date {
 
     private int jour;
     private int mois;
-    private int année;
-    private static String[] moisLettres = {"none", "janvier", "février", "mars", "avril", "mai", "juin", "juillet", "aout", "septembre", "octobre", "novembre", "décembre"};
+    private int annee;
+    private static String[] moisLettres = {"none", "janvier", "fevrier", "mars", "avril", "mai", "juin", "juillet", "aout", "septembre", "octobre", "novembre", "decembre"};
 
-    public Date(int jour, int mois, int année) {
+    public Date(int jour, int mois, int annee) {
         this.jour = jour;
         this.mois = mois;
-        this.année = année;
+        this.annee = annee;
     }
 
     @Override
     public String toString() {
-        return this.jour + " " + moisLettres[this.mois] + " " + this.année;
+        return this.jour + " " + moisLettres[this.mois] + " " + this.annee;
     }
 
 
     public Date demain() {
         int j = this.jour;
         int m = this.mois;
-        int a = this.année;
+        int a = this.annee;
 
         j += 1;
         if (j > jourdumois(m, a)) {
@@ -39,12 +39,12 @@ public class Date {
 
     public Date incermenter() {
         this.jour += 1;
-        if (this.jour > jourdumois(this.mois, this.année)) {
+        if (this.jour > jourdumois(this.mois, this.annee)) {
             this.jour = 1;
             this.mois += 1;
         }
         if (this.mois > 12) {
-            this.année += 1;
+            this.annee += 1;
             this.mois = 1;
         }
         return this;
@@ -65,15 +65,15 @@ public class Date {
     }
 
     public boolean egal(Date d2) {
-        if (this.jour == d2.jour && this.mois == d2.mois && this.année == d2.année) {
+        if (this.jour == d2.jour && this.mois == d2.mois && this.annee == d2.annee) {
             return true;
         } else {
             return false;
         }
     }
 
-    public boolean antérieure(Date d2) {
-        if (this.année <= d2.année) {
+    public boolean anterieure(Date d2) {
+        if (this.annee <= d2.annee) {
             if (this.mois <= d2.mois) {
                 if (this.jour <= d2.jour) {
                     return false;
@@ -89,8 +89,8 @@ public class Date {
     }
 
 
-    public boolean postérieure(Date d2) {
-        if (this.année >=d2.année){
+    public boolean posterieure(Date d2) {
+        if (this.annee >=d2.annee){
             if (this.mois >=d2.mois){
                 if (this.jour >=d2.jour){
                     return false;
@@ -105,14 +105,14 @@ public class Date {
         }
     }
 
-    public int différence(Date d2) {
+    public int difference(Date d2) {
         int x = 0;
-        if (this.antérieure(d2)) {
+        if (this.anterieure(d2)) {
             while (!egal(d2)) {
                 x += 1;
                 this.incermenter();
             }
-        }else if (this.postérieure(d2)) {
+        }else if (this.posterieure(d2)) {
             while (!egal(d2)) {
                 x += 1;
                 d2.incermenter();

@@ -73,7 +73,7 @@ public class EE {
     private void ajoutPratique(int e) {
         if (!contient(e) && cardinal != ensTab.length) {
             ensTab[cardinal] = e;
-            cardinal += 1;
+            cardinal ++;
         }
 
 
@@ -81,9 +81,11 @@ public class EE {
 
     private int retraitPratique(int i) {
         int[] t = new int[1];
-        if (0 < i && i < cardinal && contient(i)) {
+        if (0 <= i && i < cardinal) {
             int k = ensTab[i];
-            ensTab[i] = t[0];
+            cardinal --;
+            ensTab[i] = ensTab[cardinal];
+            ensTab[cardinal] = t[0];
             return k;
         }
         return 0;

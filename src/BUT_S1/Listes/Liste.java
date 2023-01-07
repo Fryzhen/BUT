@@ -166,7 +166,6 @@ public class Liste {
     }
 
     private Maillon dernierMaillon() {
-        int x = 1;
         Maillon m = tete;
         while (m.getSuiv() != null) {
             m = m.getSuiv();
@@ -185,7 +184,7 @@ public class Liste {
     }
 
     public void ajoutFinSiAbsent(int n) {
-        if (!contient(n)&&!estVide()) {
+        if (!contient(n) && !estVide()) {
             Maillon m = dernierMaillon();
             Maillon newdernier = new Maillon(n);
             m.setSuiv(newdernier);
@@ -196,29 +195,79 @@ public class Liste {
         if (estVide()) {
             return this;
         }
-        Liste l = new Liste();
         Maillon m = tete;
-        if (m.getVal() %2 == 0){
-            l.ajoutFin(m.getVal());
+        Liste l = new Liste();
+        if (m.getVal() % 2 == 0) {
+            l.ajoutTete(m.getVal());
         }
         while (m.getSuiv() != null) {
             m = m.getSuiv();
-            if (m.getVal() %2 == 0){
-                l.ajoutFin(m.getVal());
+            if (m.getVal() % 2 == 1) {
+                if (l.estVide()) {
+                    l.ajoutTete(m.getVal());
+                } else {
+                    l.ajoutFin(m.getVal());
+                }
             }
         }
         return l;
     }
 
-    public void tronquerK(int i) {
+    public void tronquerK(int k) {
+        Maillon m = tete;
+        boolean fin = false;
+        for (int i = 0; i < k; i++) {
+            if (!fin) {
+                if (m.getSuiv() != null) {
+                    m = m.getSuiv();
+                } else {
+                    fin = true;
+                }
+            }
+        }
+        if (!fin) {
+            m.setSuiv(null);
+        }
+
     }
 
     public boolean supprOcc(int n) {
+        if (estVide()) {
+            return false;
+        }
+
+        Maillon m = tete;
+        if (m.getVal() == n) {
+            if (m.getSuiv() != null) {
+                tete = m.getSuiv();
+            } else {
+                m.setSuiv(null);
+            }
+            return true;
+        }
+        while (m.getSuiv() != null) {
+            if (m.getSuiv().getVal() == n) {
+                if (m.getSuiv().getSuiv() != null) {
+                    m.setSuiv(m.getSuiv().getSuiv());
+                } else {
+                    m.setSuiv(null);
+                }
+                return true;
+            }
+            m = m.getSuiv();
+        }
         return false;
     }
 
     public Liste inverse() {
-        return new Liste();
+        Liste l = new Liste();
+        Maillon m = tete;
+        l.ajoutTete(m.getVal());
+        while (m.getSuiv() != null) {
+            m = m.getSuiv();
+            l.ajoutTete(m.getVal());
+        }
+        return l;
     }
 
     public void inverseRec() {
@@ -229,6 +278,28 @@ public class Liste {
     }
 
     public void suppToutesOcc(int n) {
+        if (!estVide()) {
+            Maillon m = tete;
+            if (m.getVal() == n) {
+                if (m.getSuiv() != null) {
+                    tete = m.getSuiv().getSuiv();
+                    m = tete;
+                } else {
+                    m.setSuiv(null);
+                }
+            }
+            while (m.getSuiv() != null) {
+                if (m.getSuiv().getVal() == n) {
+                    if (m.getSuiv().getSuiv() != null) {
+                        m.setSuiv(m.getSuiv().getSuiv());
+                    } else {
+                        m.setSuiv(null);
+                    }
+                } else if (m.getSuiv() != null) {
+                    m = m.getSuiv();
+                }
+            }
+        }
     }
 
     public boolean sousListe(Liste l) {

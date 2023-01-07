@@ -32,30 +32,7 @@ public class MainListe {
         System.out.println("Longueur L1 >= 2 ? = " + L1.estSupK(2));
         System.out.println("Longueur L1 >= 3 ? = " + L1.estSupK(3));
         System.out.println("Longueur L1 >= 4 ? = " + L1.estSupK(4));
-*/
 
-        Liste L1 = new Liste(3);
-        L1.ajoutTete(2);
-        L1.ajoutTete(6);
-
-        int[] tab = {-3, -8, 5, 6, 8, 2, 6};
-        Liste L2 = new Liste(tab);
-
-        int[] tab4 = {1, 2, 3, 4};
-        Liste L4 = new Liste(tab4);
-
-        int[] tab5 = {0, 1, 2, 3, 4};
-        Liste L5 = new Liste(tab5);
-
-        Liste Lvide = new Liste();
-        Liste L2copie = new Liste(L2);
-
-        System.out.println("L1 = " + L1);
-        System.out.println("L2 = " + L2);
-        System.out.println("L4 = " + L4);
-        System.out.println("L5 = " + L5);
-
-        //System.out.println("Dernier de L1 = " + L1.dernierMaillon());
         System.out.println("Dernier de L1 = " + L1.dernierElt());
 
         L1.ajoutFin(-7);
@@ -70,8 +47,8 @@ public class MainListe {
         Lvide.ajoutFinSiAbsent(1);
         System.out.println("Ajout de 1 a une liste vide = " + Lvide);
 
-        System.out.println("Extraire impairs tete de L1 = " + L1.extractionImpairs());
-        System.out.println("Extraire impairs queue de L2 = " + L2.extractionImpairs());
+        System.out.println("Extraire impairs de L2 = " + L2.extractionImpairs());
+        System.out.println("Extraire impairs de L1 = " + L1.extractionImpairs());
 
         L2copie.tronquerK(2);
         System.out.println("Tronque L2 (copie) à l'indice 2 = " + L2copie);
@@ -97,6 +74,31 @@ public class MainListe {
         System.out.println(" ; L2 après = " + L2 + " ; res = " + res);
 
         System.out.println("L4 a l'envers = " + L4.inverse());
+*/
+
+        Liste L1 = new Liste(3);
+        L1.ajoutTete(2);
+        L1.ajoutTete(6);
+
+        int[] tab = {-3, -8, 5, 6, 8, 2, 6};
+        Liste L2 = new Liste(tab);
+
+        int[] tab4 = {1, 2, 3, 4};
+        Liste L4 = new Liste(tab4);
+
+        int[] tab5 = {0, 1, 2, 3, 4};
+        Liste L5 = new Liste(tab5);
+
+        Liste Lvide = new Liste();
+        Liste L2copie = new Liste(L2);
+
+        System.out.println("L1 = " + L1);
+        System.out.println("L2 = " + L2);
+        System.out.println("L4 = " + L4);
+        System.out.println("L5 = " + L5);
+
+        //System.out.println("Dernier de L1 = " + L1.dernierMaillon());
+
 
         System.out.print("Inversion en place de L4 = ");
         L4.inverseRec();
